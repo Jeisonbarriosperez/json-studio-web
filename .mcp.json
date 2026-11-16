@@ -11,6 +11,13 @@
     "penpot": {
       "type": "http",
       "url": "${PENPOT_MCP_URL:-http://localhost:4401/mcp}"
+    },
+    "inkscape": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/jjjsood/inkscape-mcp-server.git", "inkscape-mcp"],
+      "env": {
+        "INKSCAPE_MCP_WORKSPACE_ROOTS": "${CLAUDE_PROJECT_DIR}/design/logo"
+      }
     }
   }
 }
