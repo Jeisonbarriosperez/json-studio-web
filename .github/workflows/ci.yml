@@ -1,0 +1,42 @@
+# Se ejecuta en cada push y pull request: lint, tipos, formato, tests de integración y auditoría.
+# Los tests e2e con Playwright se agregan cuando exista interfaz real que probar.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  calidad:
+    name: Lint, tipos, tests y auditoría
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Valores solo para CI: no son secretos reales ni apuntan a Neon.
+      PAYLOAD_SECRET: clave-solo-para-ci
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/jsonstudio_test
+      NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: jsonstudio_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v5
+      # Lee la versión de pnpm del campo packageManager de package.json.
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm format:check
+      - run: pnpm test:int
+      - run: pnpm audit --audit-level=high
