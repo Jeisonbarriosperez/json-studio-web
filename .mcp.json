@@ -16,7 +16,7 @@
       "command": "uvx",
       "args": ["--from", "git+https://github.com/jjjsood/inkscape-mcp-server.git", "inkscape-mcp"],
       "env": {
-        "INKSCAPE_MCP_WORKSPACE_ROOTS": "${CLAUDE_PROJECT_DIR}/design/logo"
+        "INKSCAPE_MCP_WORKSPACE_ROOTS": "/home/ubuntu/Portafolio/design/logo"
       }
     }
   }

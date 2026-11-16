@@ -66,6 +66,7 @@ confianza. Brief completo: `PROMPT-INICIAL.md`. Identidad: concepto `{ json }`, 
   borrar archivos, tocar CI/CD o despliegue, cualquier servicio que cueste dinero.
 - 🚫 Nunca: leer o escribir archivos `.env` reales, desactivar tests o validaciones para que
   algo "pase", `git push --force`, commitear secretos, `migrate:fresh` sobre una BD con datos.
+- 🚫 Commits y PRs sin ninguna línea de atribución a la IA (`Co-Authored-By`, "Generated with"): solo mi autoría.
 
 ## Verificación
 

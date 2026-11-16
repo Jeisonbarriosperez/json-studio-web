@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160">
+  <title>Json Studio</title>
+  <g font-family="JetBrains Mono" font-size="96">
+    <text x="28" y="112" font-weight="700" fill="#5C8BFF">{</text>
+    <text x="124" y="112" font-weight="700" fill="#EEF0F6">json</text>
+    <text x="376" y="112" font-weight="700" fill="#5C8BFF">}</text>
+    <text x="482" y="112" font-weight="300" fill="#8B93A7">studio</text>
+  </g>
+</svg>
