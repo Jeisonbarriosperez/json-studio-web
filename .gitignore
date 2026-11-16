@@ -1,0 +1,43 @@
+# Secretos: nunca al repositorio
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Configuración local de Claude Code (personal, no se comparte)
+.claude/settings.local.json
+
+# Dependencias y builds
+node_modules/
+.pnp
+.pnp.js
+.next/
+out/
+build/
+dist/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Archivos subidos en local (contenido, no código)
+public/media/
+media/
+
+# Pruebas
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Despliegue
+.vercel/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+*.log
+.idea/

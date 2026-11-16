@@ -1,0 +1,13 @@
+# Configuración de pnpm (desde pnpm 10 vive aquí, no en package.json).
+
+# Solo estas dependencias pueden ejecutar scripts de instalación: compilan binarios nativos.
+allowBuilds:
+  sharp: true
+  esbuild: true
+  unrs-resolver: true
+
+# Versiones mínimas forzadas en dependencias transitivas con vulnerabilidades publicadas
+# (pnpm audit). Se revisan cuando Payload o Vitest las actualicen por su cuenta.
+overrides:
+  dompurify: '>=3.4.17'
+  happy-dom: '>=21.0.4'

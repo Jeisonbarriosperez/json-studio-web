@@ -1,0 +1,13 @@
+# Documentos del kit escritos a mano: no se reformatean
+PROMPT-INICIAL.md
+LEEME.md
+
+node_modules
+.next
+pnpm-lock.yaml
+src/payload-types.ts
+src/app/(payload)/admin/importMap.js
+public/media
+coverage
+playwright-report
+test-results
