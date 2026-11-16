@@ -8,9 +8,11 @@ Nunca guardes aquí claves, tokens, contraseñas ni datos personales.
 - 2026-11-16: kit adaptado y base creada con create-payload-app 3.93 (plantilla blank + Postgres).
   Lint, tipos, formato y `pnpm audit --audit-level=high` en verde. `test:int` no se corrió en local
   (falta la base de datos); CI lo corre con un Postgres de servicio.
-- Sin commits aún; `origin` apunta a GitHub (json-studio-web). Pendiente: primer commit y push.
-- Pendiente del usuario: proyecto en Neon (plan gratis) y `.env` a partir de `.env.example`; activar el
-  MCP de Penpot (`PENPOT_MCP_URL`); aprobar identidad visual (paso 5) y lista de specs (paso 6).
+- Commit inicial en `main` y CI en verde en GitHub. Dependabot abrió PRs de acciones (pendientes de fusionar).
+- Neon y `.env` funcionan (test:int pasa). MCP de Penpot conectado (modo alojado, `PENPOT_MCP_URL`).
+- Identidad aprobada y creada en Penpot (archivo "Nuevo Archivo 1", página "Identidad"): 99 tokens
+  (`base`, `theme/light`, `theme/dark`, temas Mode→Light/Dark, 11 tipografías compuestas) y dos láminas
+  de muestra (claro y oscuro). Nombres de tokens en inglés porque pasan al código. Logo: lo entrega el usuario.
 - Sin dominio todavía: metadata y Resend trabajan con marcadores hasta que exista.
 
 ## Decisiones (y por qué)
@@ -37,6 +39,8 @@ Nunca guardes aquí claves, tokens, contraseñas ni datos personales.
 
 ## Próximos pasos
 
-- Aprobar identidad visual y lista de specs → `/sdd-spec 001-sistema-de-diseno ...`.
+- Siguiente: `/sdd-spec 001-sistema-de-diseno` (leer tokens desde Penpot con el MCP y pasarlos a Tailwind).
+- Penpot MCP, aprendido: `applyToken` de radio exige las 4 esquinas (no `'all'`); `resize` fija el alto
+  (reponer `flex.verticalSizing='auto'`); al reconectar el plugin se pierde `storage`; la pestaña debe seguir activa.
 - Primer commit y push cuando el usuario lo apruebe; comprobar que CI pasa en GitHub.
 - Agregar job e2e de Playwright en CI cuando haya interfaz real que probar.
